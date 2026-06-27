@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matemática com Gabriel! 🚀</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="stars" id="stars-bg"></div>
+<div class="planet" style="width:300px;height:300px;background:#7986CB;top:-80px;right:-80px"></div>
+<div class="planet" style="width:200px;height:200px;background:#4DB6AC;bottom:60px;left:-60px"></div>
+
+<!-- WELCOME -->
+<div class="screen active" id="welcome-screen">
+  <span class="rocket-anim">🚀</span>
+  <h1 class="title-big">Matemática<br>com Gabriel!</h1>
+  <p class="subtitle">Uma aventura pelo espaço com contas de + e −</p>
+  <div class="info-cards">
+    <div class="info-card"><span class="ic-icon">🧮</span><span class="ic-num">48</span><span class="ic-label">questões</span></div>
+    <div class="info-card"><span class="ic-icon">⏱️</span><span class="ic-num">~40</span><span class="ic-label">minutos</span></div>
+    <div class="info-card"><span class="ic-icon">⭐</span><span class="ic-num">3</span><span class="ic-label">tipos</span></div>
+  </div>
+  <div style="background:rgba(255,255,255,.1);border-radius:16px;padding:14px 20px;margin-bottom:28px;max-width:380px;color:#B3E5FC;font-size:14px;line-height:1.7;text-align:left">
+    <div>🔢 <strong style="color:white">Contas normais</strong> — resolve a equação</div>
+    <div>📖 <strong style="color:white">Problemas</strong> — lê a história e descobre</div>
+    <div>❓ <strong style="color:white">Número faltando</strong> — qual número completa a conta?</div>
+  </div>
+  <button class="btn btn-primary" onclick="startGame()">Vamos lá! 🌟</button>
+</div>
+
+<!-- GAME -->
+<div class="screen" id="game-screen">
+  <div class="top-bar">
+    <div class="progress-wrap"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    <span class="q-counter" id="q-counter">1 / 48</span>
+    <span class="score-badge">⭐ <span id="score-display">0</span></span>
+  </div>
+  <div class="section-banner" id="section-banner"></div>
+  <div class="question-card">
+    <span class="q-emoji" id="q-emoji">🌍</span>
+    <span class="type-badge" id="type-badge"></span>
+    <div class="q-story" id="q-story"></div>
+    <p class="q-context" id="q-context"></p>
+    <div class="visual-helper" id="visual-helper"></div>
+    <div class="q-math" id="q-math"></div>
+    <div class="options-grid" id="options-grid"></div>
+    <div class="feedback-box" id="feedback-box"></div>
+    <div class="explanation-panel" id="explanation-panel">
+      <div class="exp-title" id="exp-title"></div>
+      <div id="exp-body"></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-check" id="btn-check" onclick="checkAnswer()" disabled>Verificar ✔</button>
+      <button class="btn btn-next" id="btn-next" onclick="nextQuestion()">Próxima →</button>
+    </div>
+  </div>
+</div>
+
+<!-- FINISH -->
+<div class="screen" id="finish-screen">
+  <div class="finish-card">
+    <span class="trophy-anim" id="finish-trophy">🏆</span>
+    <h2 class="finish-title" id="finish-title">Parabéns, Gabriel!</h2>
+    <p class="finish-subtitle" id="finish-subtitle"></p>
+    <div class="stars-row" id="finish-stars"></div>
+    <div class="score-circle"><span class="sc-num" id="final-score-num">0</span><span class="sc-label">pontos</span></div>
+    <div class="result-bar">
+      <div class="result-item ri-correct"><div class="ri-num" id="res-correct">0</div><div class="ri-label">✅ Corretas</div></div>
+      <div class="result-item"><div class="ri-num" style="color:#5C6BC0" id="res-total">48</div><div class="ri-label">📝 Total</div></div>
+      <div class="result-item ri-wrong"><div class="ri-num" id="res-wrong">0</div><div class="ri-label">❌ Erradas</div></div>
+    </div>
+    <div class="msg-box" id="finish-msg"></div>
+    <button class="btn btn-primary" onclick="restartGame()">Jogar de novo! 🚀</button>
+  </div>
+</div>
+<div class="confetti-wrap" id="confetti-wrap"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
